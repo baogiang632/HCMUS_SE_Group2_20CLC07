@@ -269,7 +269,7 @@ app.get('/product', (req, res)=>{
     q = req.query.q;
     console.log(q);
     let matchProduct = _product.filter(function(product){
-      return product.TenSP.indexOf(q) !== -1;
+      return product.TenSP.toLowerCase().indexOf(q) != -1;
     });
     if(typeof(q) === 'undefined')
       res.render('product', { _product,  count, countIT, countEducation, countPsychology, countDetective});
